@@ -1,0 +1,45 @@
+
+<app-appheader></app-appheader>
+<app-appmenu></app-appmenu>
+
+<div class="content-wrapper">
+
+
+
+<div class="col-md-6">
+        <h2>{{pageTitle}}</h2>
+        <!-- <button class="btn btn-danger" (click)="addUser()"> Add User</button> -->
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th class="hidden">Id</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Email</th>
+            <th>Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let user of users">
+            <td class="hidden">{{user.id}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.email}}</td>
+            <td><button class="btn btn-danger" (click)="deleteUser(user)"> Delete</button>
+              <button class="btn btn-danger" (click)="editUser(user)" style="margin-left: 20px;"> Edit</button></td>
+          </tr>
+          </tbody>
+        </table>
+  </div>
+  
+
+
+
+</div>
+
+
+
+
+<app-appfooter></app-appfooter>
+
+<app-appsettings></app-appsettings>
